@@ -1,0 +1,39 @@
+{
+  "name": "sql-bricks-sqlite",
+  "version": "0.1.0",
+  "author": "Peter Rust <peter@cornerstonenw.com>",
+  "description": "Transparent, Schemaless SQL Generation for the SQLite dialect",
+  "homepage": "https://github.com/CSNW/sql-bricks-sqlite",
+  "bugs": "https://github.com/CSNW/sql-bricks-sqlite/issues",
+  "scripts": {
+    "test": "mocha sqlite-tests.js"
+  },
+  "main": "sqlite.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSNW/sql-bricks-sqlite.git"
+  },
+  "keywords": [
+    "sql",
+    "generation",
+    "generate",
+    "query",
+    "sqlite",
+    "builder",
+    "select",
+    "insert",
+    "update",
+    "delete"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "underscore": "1.4.x",
+    "sql-bricks": "1.0.0-beta.2"
+  },
+  "devDependencies": {
+    "mocha": "1.13.x"
+  },
+  "license": "MIT"
+}
