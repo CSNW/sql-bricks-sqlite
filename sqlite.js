@@ -14,7 +14,7 @@
   Insert.defineClause('or', '{{#if _or}}OR {{_or}}{{/if}}', {after: 'insert'});
 
   var or_methods = {
-    'orReplace': 'REPLACE', 'orRollback': 'ROLLBACK',
+    'orReplace': 'REPLACE', 'orIgnore': 'IGNORE', 'orRollback': 'ROLLBACK',
     'orAbort': 'ABORT', 'orFail': 'FAIL'
   };
   Object.keys(or_methods).forEach(function(method) {
