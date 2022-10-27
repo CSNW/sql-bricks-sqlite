@@ -29,8 +29,8 @@
     "node": "*"
   },
   "dependencies": {
-    "underscore": "1.4.x",
-    "sql-bricks": "1.0.0-beta.2"
+    "underscore": "^1.12.1",
+    "sql-bricks": "^3.0.0"
   },
   "devDependencies": {
     "mocha": "1.13.x"
