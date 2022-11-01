@@ -10,8 +10,8 @@
   var Select = sql.select;
 
   // Insert & Update OR clauses (SQLite dialect)
-  Update.defineClause('or', '{{#if _or}}OR {{_or}}{{/if}}', {after: 'update'});
-  Insert.defineClause('or', '{{#if _or}}OR {{_or}}{{/if}}', {after: 'insert'});
+  Update.defineClause('or', function(opts) { return this._or ? `OR ${this._or}` : '' }, {after: 'update'});
+  Insert.defineClause('or', function(opts) { return this._or ? `OR ${this._or}` : '' }, {after: 'insert'});
 
   var or_methods = {
     'orReplace': 'REPLACE', 'orRollback': 'ROLLBACK',
@@ -35,13 +35,13 @@
 
   Select.defineClause(
     'limit',
-    '{{#ifNotNull _limit}}LIMIT {{_limit}}{{/ifNotNull}}',
+    function(opts) { return this._limit != null ? `LIMIT ${this._limit}` : '' },
     {after: 'orderBy'}
   );
 
   Select.defineClause(
     'offset',
-    '{{#ifNotNull _offset}}OFFSET {{_offset}}{{/ifNotNull}}',
+    function(opts) { return this._offset != null ? `OFFSET ${this._offset}` : '' },
     {after: 'limit'}
   );
 
